@@ -1,8 +1,7 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
 /**
- * print_c - that prints character
+ * print_c - prints character
  * @args: character argument
  * Return: number of characters
  */
@@ -14,7 +13,7 @@ int print_c(va_list args)
 	return (_putchar(c));
 }
 /**
- * print_s - that prints a string
+ * print_s - prints a string
  * @args: string  argument
  * Return: number of characters
  */
@@ -36,7 +35,7 @@ int print_s(va_list args)
 	return (count);
 }
 /**
- * print_percent - that pass the percent sing
+ * print_percent - pass the percent sing
  * @args: string  argument
  * Return: return the percent sing
  *
@@ -54,7 +53,7 @@ int print_percent(va_list args)
 }
 
 /**
- * print_d - that prints a decimal
+ * print_d - prints a decimal
  * @args: decimal argument
  * Return: counter
  */
@@ -66,13 +65,13 @@ int print_d(va_list args)
 
 	count = 0;
 	n = va_arg(args, int);
-	if (n < 0)
-	{
-		absolute = (n * -1);
-		count += _putchar('-');
-	}
-	else
-		absolute = n;
+		if (n < 0)
+		{
+			absolute = (n * -1);
+			count += _putchar('-');
+		}
+		else
+			absolute = n;
 
 	aux = absolute;
 	countnum = 1;
@@ -89,7 +88,7 @@ int print_d(va_list args)
 	return (count);
 }
 /**
- * print_i - that prints integer
+ * print_i - prints integer
  * @args: integer argument
  * Return: the decimal function
  */
