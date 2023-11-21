@@ -11,10 +11,10 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0, j = 0;
+	int count = 0, i = 0, j = 0;
 	va_list list;
 
-	print tab[4] = {
+	print tab[] = {
 		{"c", print_char},
 		{"%", print_percent},
 		{"s", print_str},
@@ -31,20 +31,15 @@ int _printf(const char *format, ...)
 		{
 			j++;
 
-			if (format[j] == 'c')
+			while (tab[i].caract != NULL)
 			{
-				tab[0].f(list);
-				count++;
-			}
-			else if (format[j] == 's')
-			{
-				tab[2].f(list);
-				count++;
-			}
-			else if (format[j] == '%')
-			{
-				tab[1].f(list);
-				count++;
+				if (format[j] == *tab[i].caract)
+				{
+					tab[i].f(list);
+					count++;
+					break;
+				}
+				i++;
 			}
 		}
 	j++;
