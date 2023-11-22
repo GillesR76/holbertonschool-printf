@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -6,7 +5,6 @@
  * @format: pointer to a character string
  *
  * Return: the number of characters printed
- * (excluding the null byte used to end output to strings)
  */
 
 int _printf(const char *format, ...)
@@ -14,14 +12,8 @@ int _printf(const char *format, ...)
 	int count = 0, i = 0, j = 0;
 	va_list list;
 
-	print tab[] = {
-		{"c", print_char},
-		{"%", print_percent},
-		{"s", print_str},
-		{"d", print_d},
-		{"i", print_i},
-		{NULL, NULL}
-	};
+	print tab[] = {{"c", print_char}, {"%", print_percent}, {"s", print_str},
+		{"d", print_i}, {"i", print_i}, {NULL, NULL}};
 
 	va_start(list, format);
 
@@ -35,16 +27,22 @@ int _printf(const char *format, ...)
 		else
 		{
 			j++;
-
-			while (tab[i].caract != NULL)
+			if (format[j] == '%')
 			{
-				if (format[j] == *tab[i].caract)
+				_putchar('%');
+				count++;
+			}
+			else
+			{
+				while (tab[i].caract != NULL)
 				{
-					tab[i].f(list);
-					count++;
-					break;
+					if (format[j] == *tab[i].caract)
+					{
+						count += tab[i].f(list);
+						break;
+					}
+					i++;
 				}
-				i++;
 			}
 		}
 	j++;
