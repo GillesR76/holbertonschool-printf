@@ -8,8 +8,10 @@
  * Return: void
  */
 
-void printint(int n)
+int printint(int n)
 {
+	int count = 0;
+
 	if (n < 0)
 	{
 		n = (-1) * n;
@@ -19,6 +21,8 @@ void printint(int n)
 		printint(n / 10);
 
 	_putchar(n % 10 + '0');
+	count++;
+	return (count);
 }
 
 /**
@@ -28,25 +32,11 @@ void printint(int n)
  * Return: void
  */
 
-void print_i(va_list list)
+int print_i(va_list list)
 {
 	int number;
 
 	number = va_arg(list, int);
-	printint(number);
+	return (printint(number));
 }
 
-/**
- * print_d - function to print decimal integers
- * @list: list of arguments to print from
- *
- * Return: void
- */
-
-void print_d(va_list list)
-{
-	int number;
-
-	number = va_arg(list, int);
-	printint(number);
-}
