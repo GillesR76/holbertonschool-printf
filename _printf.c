@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"%", print_percent},
 		{"s", print_str},
+		{"d", print_d},
+		{"i", print_i},
 		{NULL, NULL}
 	};
 
@@ -26,7 +28,10 @@ int _printf(const char *format, ...)
 	while (format[j] != '\0')
 	{
 		if (format[j] != '%')
+		{
 			_putchar(format[j]);
+			count++;
+		}
 		else
 		{
 			j++;
