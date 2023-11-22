@@ -8,9 +8,10 @@
  * Return: void
  */
 
-void print_char(va_list list)
+int print_char(va_list list)
 {
 	_putchar(va_arg(list, int));
+	return (1);
 }
 
 /**
@@ -20,10 +21,11 @@ void print_char(va_list list)
  * Return: void
  */
 
-void print_percent(va_list list)
+int print_percent(va_list list)
 {
 	(void)list;
 	_putchar('%');
+	return (1);
 }
 
 /**
@@ -33,13 +35,16 @@ void print_percent(va_list list)
  * Return: void
  */
 
-void print_str(va_list list)
+int print_str(va_list list)
 {
 	char *str = va_arg(list, char*);
-	int i;
+	int i, count = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
+		count++;
 	}
+	return (count);
 }
+
