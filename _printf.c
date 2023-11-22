@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"%", print_percent},
 		{"s", print_str},
-		{"d", print_d},
+		{"d", print_i},
 		{"i", print_i},
 		{NULL, NULL}
 	};
@@ -40,8 +40,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[j] == *tab[i].caract)
 				{
-					tab[i].f(list);
-					count++;
+					count += tab[i].f(list);
 					break;
 				}
 				i++;
