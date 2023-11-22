@@ -16,6 +16,7 @@ int printint(int n)
 	{
 		n = (-1) * n;
 		_putchar('-');
+		count++;
 	}
 	if (n / 10)
 		printint(n / 10);
