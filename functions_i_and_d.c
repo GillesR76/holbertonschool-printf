@@ -15,12 +15,14 @@ int printint(int n)
 	if (n < 0)
 	{
 		n = (-1) * n;
-		count += _putchar('-');
+		_putchar('-');
+		count++;
 	}
 	if (n / 10)
 		printint(n / 10);
 
-	count += _putchar(n % 10 + '0');
+	_putchar(n % 10 + '0');
+	count++;
 	return (count);
 }
 
