@@ -23,6 +23,7 @@ int print_char(va_list list)
 
 int print_percent(va_list list)
 {
+	void(list)
 	_putchar('%');
 	return (1);
 }
@@ -45,7 +46,7 @@ int print_str(va_list list)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
-	return (i);
+		count++;
 	}
 	return (count);
 }
