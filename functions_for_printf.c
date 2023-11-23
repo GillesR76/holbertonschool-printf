@@ -50,4 +50,3 @@ int print_str(va_list list)
 	}
 	return (count);
 }
-
