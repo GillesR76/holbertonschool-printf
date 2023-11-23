@@ -8,9 +8,8 @@
  * Return: void
  */
 
-int printint(int n)
+int printint(int n, int count)
 {
-	int count = 0;
 
 	if (n < 0)
 	{
@@ -20,11 +19,11 @@ int printint(int n)
 	}
 	if (n / 10)
 	{
-		printint(n / 10);
-		count++;
+		count += printint(n / 10, 0);
 	}
 
 	_putchar(n % 10 + '0');
+	count++;
 	return (count);
 }
 
@@ -38,8 +37,9 @@ int printint(int n)
 int print_i(va_list list)
 {
 	int number;
+	int count = 0;
 
 	number = va_arg(list, int);
-	return (printint(number));
+	return (printint(number, count));
 }
 
