@@ -11,23 +11,18 @@ int _printf(const char *format, ...)
 {
 	int count = 0, i = 0, j = 0;
 	va_list list;
-
 	print tab[] = {{"c", print_char}, {"%", print_percent}, {"s", print_str},
 		{"d", print_i}, {"i", print_i}, {NULL, NULL}};
 
 	if (format == NULL)
 		return (-1);
-
 	if (*format == '\0')
 		return (count);
 	va_start(list, format);
 	while (format[j] != '\0')
 	{
 		if (format[j] != '%')
-		{
-			_putchar(format[j]);
-			count++;
-		}
+			count += _putchar(format[j]);
 		else
 		{
 			j++;
@@ -39,6 +34,12 @@ int _printf(const char *format, ...)
 					break;
 				}
 				i++;
+			}
+			if (tab[i].caract == NULL)
+			{
+				_putchar('%');
+				_putchar(format[j]);
+				count += 2;
 			}
 			i = 0;
 		}
