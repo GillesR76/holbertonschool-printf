@@ -15,12 +15,12 @@ int _printf(const char *format, ...)
 	print tab[] = {{"c", print_char}, {"%", print_percent}, {"s", print_str},
 		{"d", print_i}, {"i", print_i}, {NULL, NULL}};
 
-	if ( format == NULL)
-		return (NULL);
-	va_start(list, format);
+	if (format == NULL)
+		return (-1);
 
 	if (*format == '\0')
-		return (-1);
+		return (count);
+	va_start(list, format);
 	while (format[j] != '\0')
 	{
 		if (format[j] != '%')
@@ -42,8 +42,8 @@ int _printf(const char *format, ...)
 			}
 			i = 0;
 		}
+		j++;
 	}
-	j++;
 	va_end(list);
 	return (count);
 }
