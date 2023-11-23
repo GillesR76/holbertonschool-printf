@@ -41,7 +41,7 @@ int print_str(va_list list)
 	int i, count = 0;
 
 	if (str == NULL)
-		str = "NULL";
+		str = "(null)";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
