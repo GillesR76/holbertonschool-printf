@@ -10,6 +10,8 @@
 
 int printint(int n, int count)
 {
+	if (n == 0)
+		_putchar('0');
 
 	if (n < 0)
 	{
