@@ -10,7 +10,9 @@
 
 int print_char(va_list list)
 {
-	_putchar(va_arg(list, int));
+	char character = va_arg(list, int);
+
+	_putchar(character);
 	return (1);
 }
 
@@ -39,6 +41,9 @@ int print_str(va_list list)
 {
 	char *str = va_arg(list, char*);
 	int i, count = 0;
+	
+	if (str == NULL)
+		str = "(null)";
 
 	if (str == NULL)
 		str = "(null)";
