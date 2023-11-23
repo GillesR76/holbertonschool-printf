@@ -19,9 +19,9 @@ int printint(int n)
 		count++;
 	}
 	if (n / 10)
-	{	
-		count++;
+	{
 		printint(n / 10);
+		count++;
 	}
 
 	_putchar(n % 10 + '0');
