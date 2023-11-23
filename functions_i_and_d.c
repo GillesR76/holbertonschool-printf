@@ -4,15 +4,13 @@
 /**
  * printint - recursive function that will be called in print_i and print_d
  * @n: integer
+ * @count: integer used to count the number of characters that are printed
  *
  * Return: void
  */
 
 int printint(int n, int count)
 {
-	if (n == 0)
-		_putchar('0');
-
 	if (n < 0)
 	{
 		n = (-1) * n;
