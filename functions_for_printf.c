@@ -5,25 +5,29 @@
  * print_char - function to print a char
  * @list: list of arguments to print from
  *
- * Return: void
+ * Return: 1
  */
 
-void print_char(va_list list)
+int print_char(va_list list)
 {
-	_putchar(va_arg(list, int));
+	char character = va_arg(list, int);
+
+	_putchar(character);
+	return (1);
 }
 
 /**
  * print_percent - function to print a percent
  * @list: list of arguments to print from
  *
- * Return: void
+ * Return: 1
  */
 
-void print_percent(va_list list)
+int print_percent(va_list list)
 {
 	(void)list;
 	_putchar('%');
+	return (1);
 }
 
 /**
@@ -33,13 +37,18 @@ void print_percent(va_list list)
  * Return: void
  */
 
-void print_str(va_list list)
+int print_str(va_list list)
 {
 	char *str = va_arg(list, char*);
-	int i;
+	int i, count = 0;
+
+	if (str == NULL)
+		str = "(null)";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
+		count++;
 	}
+	return (count);
 }
