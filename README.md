@@ -28,10 +28,10 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 ---
 ## Specifiers
 
-%c prints a character 
-%  prints a percent
-%s prints a string
-%d, %i
+- %c prints a character 
+- %  prints a percent
+- %s prints a string
+- %d, %i
   prints an integer
 
 ---
@@ -39,7 +39,6 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 
 Input:
 
----
  
 ```c
 
@@ -91,7 +90,6 @@ return (0);
 
 Output:
 
----
 
 ```bash
 root@50c158e79d1b:~/holbertonschool-printf# ./a.out
@@ -122,7 +120,7 @@ Len:[12]
 Unknown:[%r]
 Unknown:[%r]
 Name: John, Age: 25
-\_printf: function that prints to standard output
+_printf: function that prints to standard output
 Print a character: P
 My bank account: -20000
 ```
