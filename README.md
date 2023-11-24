@@ -31,8 +31,7 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 - %c prints a character 
 - %  prints a percent
 - %s prints a string
-- %d, %i
-  prints an integer
+- %d, %i prints an integer
 
 ---
 ## Usage examples
