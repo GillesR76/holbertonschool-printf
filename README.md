@@ -93,6 +93,7 @@ Output:
 
 ---
 
+```bash
 root@50c158e79d1b:~/holbertonschool-printf# ./a.out
 Let's try to printf a simple sentence TOTO.
 Let's try to printf a simple sentence TOTO.
@@ -124,6 +125,7 @@ Name: John, Age: 25
 \_printf: function that prints to standard output
 Print a character: P
 My bank account: -20000
+```
 
 --- 
 ## Testing
@@ -132,7 +134,7 @@ We have modified the main.c file to make different tests among which, ones regar
 
 Using valgrind for memory leak detection:  
 
- ```bash
+```bash
 valgrind --leak-check=full ./a.out
 ```
 
