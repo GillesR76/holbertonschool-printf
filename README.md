@@ -91,7 +91,7 @@ Output:
 
 
 ```bash
-root@50c158e79d1b:~/holbertonschool-printf# ./a.out
+root@50c158e79d1b:~/holbertonschool-printf# .printf
 Let's try to printf a simple sentence TOTO.
 Let's try to printf a simple sentence TOTO.
 Length:[44, 44]
@@ -132,7 +132,7 @@ We have modified the main.c file to make different tests among which, ones regar
 Using valgrind for memory leak detection:  
 
 ```bash
-valgrind --leak-check=full ./a.out
+valgrind --leak-check=full .printf
 ```
 
 ---
