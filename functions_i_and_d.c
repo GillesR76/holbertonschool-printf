@@ -11,18 +11,22 @@
 
 int printint(int n, int count)
 {
+	unsigned int nbr;
+
+	nbr = n;
+
 	if (n < 0)
 	{
-		n = (-1) * n;
+		nbr = (-1) * nbr;
 		_putchar('-');
 		count++;
 	}
-	if (n / 10)
+	if (nbr / 10)
 	{
-		count += printint(n / 10, 0);
+		count += printint(nbr / 10, 0);
 	}
 
-	_putchar(n % 10 + '0');
+	_putchar(nbr % 10 + '0');
 	count++;
 	return (count);
 }
