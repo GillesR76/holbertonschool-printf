@@ -1,0 +1,72 @@
+.TH _PRINTF(3)			Library Function Manual			_PRINTF(3)
+
+
+
+.SH NAME 
+
+		_printf - formatted output conversion
+
+
+.SH SYNOPSIS
+		
+		#include "main.h"
+		#include <stdlib.h>
+		#include <stdio.h>
+		#include <stdarg.h>
+
+		int _printf(const char *format, ...);
+
+
+.SH DESCRIPTION
+
+		The _printf() function is a function that prints to the standard output according 
+		to a format string which handles conversion specifiers. 
+		The _printf() is meant to be a simplified interpretation of the C printf function.
+
+	Conversion specifiers
+
+		%c prints a character
+
+		%  prints a percent
+
+		%s prints a string
+
+		%d, %i 
+		   prints an integer
+
+		Unknown specifiers
+		   prints the percent sign and the conversion character
+
+
+.SH RETURN VALUE
+		
+		On the condition of a successful return, the _printf() function returns the 
+		number of characters printed (excluding the null byte used to end output strings.
+
+
+.SH EXAMPLES
+
+		Print a string:
+		   _printf("_printf: %s\n", "function that prints to standard output");
+	
+		Print an integer:
+		   _printf("My bank account: %d\n", -20000);   
+	
+		Print multiple values:  
+		   _printf("Name: %s, Age: %d\n", "Wembanyama", 19);
+
+.SH BUGS
+
+		No known bugs but feel free to report any encountered problem or misfunction
+		when calling the _printf() function.
+
+
+.SH AUTHORS
+
+		Kayme Aboutoihi and Gilles Richard
+
+
+.SH NOTES
+
+		Feel free to implement, adapt or improve the code of this _printf() function.
+		See also the C printf(3) man page for a deeper understanding of the printf function.
